@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Aprenda Japonês</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #333;
+    }
+    header {
+      background: #4a148c;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 32px;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    .section-title {
+      margin-top: 30px;
+      font-size: 24px;
+      border-bottom: 2px solid #4a148c;
+      padding-bottom: 5px;
+    }
+    .card {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 1px 1px 6px rgba(0,0,0,0.1);
+    }
+    .hiragana {
+      font-size: 48px;
+      font-weight: bold;
+    }
+    .romaji {
+      font-size: 18px;
+      color: #555;
+    }
+    button {
+      background: #7b1fa2;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #9c27b0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Aprenda Japonês 🇯🇵
+</header>
+
+<main>
+
+  <div class="section-title">Hiragana Básico</div>
+
+  <div class="card">
+    <div>
+      <div class="hiragana">あ</div>
+      <div class="romaji">a</div>
+    </div>
+    <button onclick="playSound('あ')">🔊 Ouvir</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div class="hiragana">い</div>
+      <div class="romaji">i</div>
+    </div>
+    <button onclick="playSound('い')">🔊 Ouvir</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div class="hiragana">う</div>
+      <div class="romaji">u</div>
+    </div>
+    <button onclick="playSound('う')">🔊 Ouvir</button>
+  </div>
+
+  <div class="section-title">Palavras Básicas</div>
+
+  <div class="card">
+    <div>
+      <div style="font-size:36px">こんにちは</div>
+      <div class="romaji">Konnichiwa</div>
+    </div>
+    <button onclick="playSound('こんにちは')">🔊 Ouvir</button>
+  </div>
+
+  <div class="card">
+    <div>
+      <div style="font-size:36px">ありがとう</div>
+      <div class="romaji">Arigatou</div>
+    </div>
+    <button onclick="playSound('ありがとう')">🔊 Ouvir</button>
+  </div>
+
+</main>
+
+<script>
+function playSound(text) {
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'ja-JP';
+  speechSynthesis.speak(utterance);
+}
+</script>
+
+</body>
+</html>
